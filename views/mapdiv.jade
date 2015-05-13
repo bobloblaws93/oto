@@ -1,0 +1,136 @@
+html
+  head
+    script(src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js')
+    link(href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css', rel='stylesheet')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+    title Concordia HTML page
+    style.
+      #menu_wrap{position:relative;margin-top:20px;margin-left:auto;margin-right:auto;padding:0; padding-right:10px;width:375px;height:40px;list-style-type:none;-webkit-border-radius:0px;-moz-border-radius:0px;border-radius:0px;-webkit-box-shadow:0 1px 3px rgba(0,0,0,.2);-moz-box-shadow:0 1px 3px rgba(0,0,0,.2);box-shadow:0 1px 3px rgba(0,0,0,.2)}.button a{cursor:pointer;text-align:center;font:13px/100% Arial, Helvetica, sans-serif;font-weight:bold;position:relative;min-width:50px;height:20px;float:left;padding:10px;padding-top:10px;padding-bottom:10px;text-decoration:none;text-shadow:0 1px 1px rgba(0,0,0,.3)}.button:first-child a{-webkit-border-top-left-radius:0px;-webkit-border-bottom-left-radius:0px;-moz-border-topleft-radius:0px;-moz-border-bottomleft-radius:0px;border-top-left-radius:0;border-bottom-left-radius:0px}.Green,.Green .button a{color:#e8f0de;background: #7db72f;border-right:solid 1px #4e7d0e;background: -moz-linear-gradient(top, #7db72f 0%, #4e7d0e 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7db72f), color-stop(100%,#4e7d0e));background: -webkit-linear-gradient(top, #7db72f 0%,#4e7d0e 100%);background: -o-linear-gradient(top, #7db72f 0%,#4e7d0e 100%);background: -ms-linear-gradient(top, #7db72f 0%,#4e7d0e 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db72f', endColorstr='#4e7d0e',GradientType=0 );background: linear-gradient(top, #7db72f 0%,#4e7d0e 100%);}.Green .button a:hover,.Green .button a:focus{background: #6b9d28;background: -moz-linear-gradient(top, #6b9d28 0%, #436b0c 64%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6b9d28), color-stop(64%,#436b0c));background: -webkit-linear-gradient(top, #6b9d28 0%,#436b0c 64%);background: -o-linear-gradient(top, #6b9d28 0%,#436b0c 64%);background: -ms-linear-gradient(top, #6b9d28 0%,#436b0c 64%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b9d28', endColorstr='#436b0c',GradientType=0 );background: linear-gradient(top, #6b9d28 0%,#436b0c 64%);}.Green .button a:active{color:#a9c08c;background: #4e7d0e;background: -moz-linear-gradient(top, #4e7d0e 0%, #7db72f 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4e7d0e), color-stop(100%,#7db72f));background: -webkit-linear-gradient(top, #4e7d0e 0%,#7db72f 100%);background: -o-linear-gradient(top, #4e7d0e 0%,#7db72f 100%);background: -ms-linear-gradient(top, #4e7d0e 0%,#7db72f 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e7d0e', endColorstr='#7db72f',GradientType=0 );background: linear-gradient(top, #4e7d0e 0%,#7db72f 100%);}.search{position:relative;float:right;margin-top:10px;}.search input[type=text]{width:120px;height:20px;padding-left:18px;margin-left:10px;padding-right:4px;outline:none;border: none;-webkit-border-radius: 20px; -moz-border-radius: 20px;border-radius: 20px;-moz-box-shadow: inset 1px 1px 3px #7a7a7a;box-shadow: inset 1px 1px 3px #7a7a7a;}.search a:before {width:6px;height:6px;border:2px solid  #000;background:transparent;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;}.search a:after {left:24px;width:2px;height:7px;margin-top:0;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg);}li a:before, li a:after {content:"";position:absolute;top:50%;left:15px;}li a:before, li a:after {margin:-7px 0 0;background: #000;}
+      body { margin:0px auto; padding:0px auto; background-color:orange}
+      #map { position:relative;margin-left: auto; margin-right: auto;top:0; bottom:0; height:50%;width:50%; }
+      #container { display: block;
+      margin-left: auto;
+      margin-right: auto;
+      position:relative;
+      height:100%;
+      text-align:center;
+      }
+      #menu
+      {
+      text-align:center;
+      background-color:#6699FF;
+      background-color: rgba(255,255,255,0.5);
+      display:inline-block;
+      }
+      li {
+      float: left;
+      }
+  body
+    link(href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css', rel='stylesheet')
+  
+    script(src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js')
+   
+    script(type='text/javascript', src='http://code.jquery.com/jquery-1.6.1.min.js')
+   
+    #container
+      ul#menu_wrap.Green
+        li.button
+          a(href='#') Home
+        li.button
+          a(href='#') Feed
+        li.button
+          a(href='#') Settings
+        |  
+        li.search
+          a(href='#')
+          input(type='text', placeholder='Search')
+      | &#x9;
+      #map
+        script(type='text/javascript').
+          var search_input= $('.search input[type=text]');var search_input_size = 120; var search_large_size = 180; var padding = 7; var shrinked = "";$(document).ready(function(){search_input.click(function(){shrink();}).focus(function(){shrink();});search_input.blur(function(){ if(shrinked=="YES")normal();});$('.button a').hover(function(){if(shrinked=="YES")normal();}); });function shrink(){if(search_input_size < search_large_size ){$('.button a').each(function(){$(this).animate({'padding-left': padding+'px','padding-right': padding+'px'},'fast');});search_input.animate({'width': search_large_size+'px'},'fast'); shrinked="YES";}return false;}function normal(){search_input.animate({'width':search_input_size+'px'},'fast'); $('.button a').animate({'padding-left':'10px','padding-right':'10px'},'fast');shrinked="";search_input.blur();return false;}
+          L.mapbox.accessToken = 'pk.eyJ1Ijoicm9ubnBhbmc5MyIsImEiOiJBY19Ndm5zIn0.ivcZjdMoLtilg9WCjdNLaQ';
+          var map = L.mapbox.map('map', 'ronnpang93.i6gb5fo9')
+          .setView([45.4954034, -73.5789971], 11);
+          var featureGroup = L.featureGroup().addTo(map);
+          // Define circle options
+          // http://leafletjs.com/reference.html#circle
+          var circle_options = {
+          color: '#fff',      // Stroke color
+          opacity: 1,         // Stroke opacity
+          weight: 10,         // Stroke weight
+          fillColor: '#000',  // Fill color
+          fillOpacity: 0.6    // Fill opacity
+          };
+          var circle_one = L.circle([38.89415, -77.03738], 20, circle_options).addTo(featureGroup);
+          var circle_two = L.circle([38.89415, -77.03578], 20, circle_options).addTo(featureGroup);
+          // Create array of lat,lon points
+          var line_points = [
+          [38.893596444352134, -77.0381498336792],
+          [38.89337933372204, -77.03792452812195],
+          [38.89316222242831, -77.03761339187622],
+          [38.893028615148424, -77.03731298446655],
+          [38.892920059048464, -77.03691601753235],
+          [38.892903358095296, -77.03637957572937],
+          [38.89301191422077, -77.03592896461487],
+          [38.89316222242831, -77.03549981117249],
+          [38.89340438498248, -77.03514575958252],
+          [38.893596444352134, -77.0349633693695]
+          ];
+          // Define polyline options
+          // http://leafletjs.com/reference.html#polyline
+          var polyline_options = {
+          color: '#000'
+          };
+          // Defining a polygon here instead of a polyline will connect the
+          // endpoints and fill the path.
+          // http://leafletjs.com/reference.html#polygon
+          var polyline = L.polyline(line_points, polyline_options).addTo(featureGroup);
+          var drawControl = new L.Control.Draw({
+          edit: {
+          featureGroup: featureGroup
+          }
+          }).addTo(map);
+          map.on('draw:created', function(e) {
+          var type = e.layerType,
+          layer = e.layer;
+          featureGroup.addLayer(e.layer);
+          coordia=layer.getBounds().getCenter();
+          ;
+          });
+		  
+          function alrt(){
+          alert(coordia);
+          }
+          function textinput(){
+          var input=document.getElementById("msgs").value;
+          alert(input);
+          }
+          function geoFindMe() {
+			
+          var output = document.getElementById("demo");
+          if (!navigator.geolocation){
+          output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+          return;
+          }
+          function success(position) {
+          var latitude  = position.coords.latitude;
+          var longitude = position.coords.longitude;
+          var coor={}
+          output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+          var img = new Image();
+          img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+          output.appendChild(img);
+          };
+          function error() {
+          output.innerHTML = "Unable to retrieve your location";
+          };
+          output.innerHTML = "<p>Locating…</p>";
+          navigator.geolocation.getCurrentPosition(success, error);
+          }
+      form#postmsg(action='/addmsg', name='addmsg', method='post', value='test')
+        textarea#msgs(rows='10', cols='50', maxlength='300', placeholder='msg', name='msg')  Type your message here
+        br
+        button#button(type='submit', name='button', value='send', onclick='alrt();geoFindMe();textinput()') submit
+        button#button(type='button', name='button', value='send', onclick='geoFindMe()') FIND ME
+      br
+      p#demo TEST

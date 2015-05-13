@@ -1,0 +1,218 @@
+
+/* 
+<!-- Author:Ronnie Pang
+ID:27041551
+DATE:18/03/15
+ -->
+ */
+form  
+{ 
+display:table;
+display:inline-block;
+margin: 0 auto;      
+
+}
+fieldset
+{
+
+border:none;
+margin:0px auto;
+width:600px;
+
+}
+
+label 
+{ 
+
+display: inline-block;
+float:left;
+clear:left;
+width:200px; 
+text-align: right;
+}
+input[type=text],input[type=password],input[type=file],select{
+  display: inline-block;
+  float: left;
+}
+input[type=radio]{
+
+text-align:center;
+
+}
+.radiobtn{
+
+margin-right:310px;
+}
+
+.header
+{
+background-image:url("house.png");
+/* 
+img src:https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=14&cad=rja&uact=8&ved=0CEkQFjAN&url=http%3A%2F%2Fwww.nanigans.com%2F%3Fattachment_id%3D28109&ei=9S0KVYm9LfPHsQTSyYDYDQ&usg=AFQjCNFXHoiNILYYXl_SfGhdGPwUbljfCg
+ */
+background-size:cover;
+background-color: rgba(255,255,255,0.5);
+width:1280px;
+height:300px;
+display:table;
+background-color:#303030;
+margin:0 auto; 
+opacity: 0.75;
+}
+
+.footer
+{
+
+width:1280px;
+height:90px;
+display:table;
+background-color:#383838;
+opacity: 0.5;
+margin:0 auto; 
+
+
+
+}
+
+p.banner{
+display: table-cell;
+vertical-align: middle;
+
+
+
+}
+div.redfont{
+color:red;
+
+}
+#container {
+  width: 1000px;
+  height:1000px;
+  margin: 0 auto;
+  padding: 0;  
+}
+#menu{
+
+text-align:center;
+background-color:#6699FF;
+background-color: rgba(255,255,255,0.5);
+}
+#menu li {
+display:inline-block;
+padding: 10px 17px 10px 12px;
+
+}
+#align{
+
+display:inline;
+
+}
+b{
+
+color:black;
+
+}
+
+ form {
+    display: block;
+    text-align: center;
+    }
+	
+
+h3{
+text-align:center;
+
+}
+h1
+{
+text-align:center;
+
+}
+p
+{
+text-align:center;
+}
+div.center
+{
+text-align:center;
+    
+}
+div.right
+{
+
+right:20px;
+position:relative;
+}
+
+div.left
+{
+
+left:-41px;
+position:relative;
+}
+div.left_2{
+left:-55px;
+position:relative;
+
+}
+body{
+	background-image:url("static/bg.jpg");
+	/* 
+	img src:http://startbootstrap.com/template-overviews/stylish-portfolio/
+	*/
+	background-size:cover;
+}
+
+div.ajax
+{
+
+left:-67px;
+position:relative;
+
+
+}
+
+input.center
+{
+text-align:center;
+
+}
+
+div.dbaccess{
+left:-29px;
+position:relative;
+
+}
+
+.headings
+{
+text-align:center;
+color:white;
+font-size:24px;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+span{
+
+display: table-cell;
+text-align:center;
+vertical-align: middle;
+color:white;
+font-size:24px;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+
+}
+label{
+
+
+text-align:center;
+
+color:white;
+font-size:10px;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+
+}
+
+div.align{
+right:30px;
+}
