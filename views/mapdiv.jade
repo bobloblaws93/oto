@@ -27,11 +27,12 @@ html
       }
   body
     link(href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css', rel='stylesheet')
-  
+    | &#x9;
     script(src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js')
-   
+    | &#x9;
     script(type='text/javascript', src='http://code.jquery.com/jquery-1.6.1.min.js')
-   
+    | &#x9;
+    | &#x9;
     #container
       ul#menu_wrap.Green
         li.button
@@ -95,18 +96,30 @@ html
           layer = e.layer;
           featureGroup.addLayer(e.layer);
           coordia=layer.getBounds().getCenter();
-          ;
+          latcoor=coordia.lat;
+          lngcoor=coordia.lng;
           });
-		  
           function alrt(){
           alert(coordia);
+          var data = {};
+          data.lat = latcoor;
+          data.lng = lngcoor;
+          $.ajax({
+          type: 'POST',
+          data: JSON.stringify(data),
+          contentType: 'application/json',
+          url: './ajax',
+          success: function(data) {
+          console.log('success');
+          console.log(JSON.stringify(data));
+          }
+          });
           }
           function textinput(){
           var input=document.getElementById("msgs").value;
           alert(input);
           }
           function geoFindMe() {
-			
           var output = document.getElementById("demo");
           if (!navigator.geolocation){
           output.innerHTML = "<p>Geolocation is not supported by your browser</p>";

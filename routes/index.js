@@ -24,9 +24,12 @@ router.get('/userlist', function(req, res) {
 
 router.post('/ajax', function (req, res){
 
-   console.log('works');
-   console.log('req received');
-   res.redirect('/');
+	var obj = {};
+	console.log('body: ' + JSON.stringify(req.body));
+	 lat = req.body.lat;
+	 lng=req.body.lng;
+	console.log(lat);
+	console.log('AJAX CALL SUCCESS');
 
 });  
 router.get('/mapdiv',function(req,res){
@@ -44,7 +47,7 @@ router.post('/addmsg',function(req,res){
 		
 		   collection.insert({
 			"msg" : msg,
-			 location: [-73.974,  40.764]
+			 location: [lat,lng]
     }, function (err, doc) {
         if (err) {
             // If it failed, return error
