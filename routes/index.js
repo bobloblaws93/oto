@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var bodyParser = require('body-parser');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -85,8 +86,8 @@ router.get('/feed', function(req, res) {
                          { $near :
                            { $geometry :
                               { type : "Point" ,
-                                coordinates : [-73.578855,  45.495575 ] } ,
-                             $maxDistance : 100000
+                                coordinates : [-73.66985,45.49624] } ,
+                             $maxDistance : 10000
                       } } }
   
  
@@ -99,9 +100,15 @@ router.get('/feed', function(req, res) {
             // If it worked, set the header so the address bar doesn't still say /adduser
             //res.location("feed");
             // And forward to success page
-         
-           console.log(doc);
-          
+            
+        var jsonStr = JSON.stringify(doc);
+        var data = JSON.parse(jsonStr);
+        var msg=[];
+        msg.name=doc[1].msg;
+        console.log(doc[0].msg);
+  res.render('feed', { title: "feed", data: msg  });
+
+           //console.log(doc);
           
             
             //res.redirect("feed");
