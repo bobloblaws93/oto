@@ -47,7 +47,7 @@ router.post('/addmsg',function(req,res){
 		
 		   collection.insert({
 			"msg" : msg,
-			 location: [lat,lng]
+			 "messgloc": [lng,lat]
     }, function (err, doc) {
         if (err) {
             // If it failed, return error
@@ -70,6 +70,43 @@ router.post('/addmsg',function(req,res){
 /* GET New User page. */
 router.get('/newuser', function(req, res) {
     res.render('newuser', { title: 'Add New User' });
+});
+
+router.get('/feed', function(req, res) {
+	//res.render('feed', { title: 'User feed' });
+	var db=req.db;
+	var collection = db.get('msg');
+	
+	
+
+	
+
+		var results = 	collection.find( {"messgloc":
+                         { $near :
+                           { $geometry :
+                              { type : "Point" ,
+                                coordinates : [-73.578855,  45.495575 ] } ,
+                             $maxDistance : 100000
+                      } } }
+  
+ 
+		, function (err, doc) {
+        if (err) {
+            // If it failed, return error
+            res.send("There was a problem accessing the information to the database.");
+        }
+        else {
+            // If it worked, set the header so the address bar doesn't still say /adduser
+            //res.location("feed");
+            // And forward to success page
+         
+           console.log(doc);
+          
+          
+            
+            //res.redirect("feed");
+        }
+    });
 });
 
 /* POST to Add User Service */
