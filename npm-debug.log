@@ -1,35 +1,255 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'start' ]
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'node-gyp' ]
 2 info using npm@2.7.4
 3 info using node@v0.12.2
-4 verbose run-script [ 'prestart', 'start', 'poststart' ]
-5 info prestart nodetest1@0.0.0
-6 info start nodetest1@0.0.0
-7 verbose unsafe-perm in lifecycle true
-8 info nodetest1@0.0.0 Failed to exec start script
-9 verbose stack Error: nodetest1@0.0.0 start: `node ./bin/www`
-9 verbose stack Exit status 1
-9 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
-9 verbose stack     at EventEmitter.emit (events.js:110:17)
-9 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:14:12)
-9 verbose stack     at ChildProcess.emit (events.js:110:17)
-9 verbose stack     at maybeClose (child_process.js:1015:16)
-9 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
-10 verbose pkgid nodetest1@0.0.0
-11 verbose cwd /home/ronnie/nodetest1
-12 error Linux 3.2.0-4-amd64
-13 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
-14 error node v0.12.2
-15 error npm  v2.7.4
-16 error code ELIFECYCLE
-17 error nodetest1@0.0.0 start: `node ./bin/www`
-17 error Exit status 1
-18 error Failed at the nodetest1@0.0.0 start script 'node ./bin/www'.
-18 error This is most likely a problem with the nodetest1 package,
-18 error not with npm itself.
-18 error Tell the author that this fails on your system:
-18 error     node ./bin/www
-18 error You can get their info via:
-18 error     npm owner ls nodetest1
-18 error There is likely additional logging output above.
-19 verbose exit [ 1, true ]
+4 silly cache add args [ 'node-gyp', null ]
+5 verbose cache add spec node-gyp
+6 silly cache add parsed spec { raw: 'node-gyp',
+6 silly cache add   scope: null,
+6 silly cache add   name: 'node-gyp',
+6 silly cache add   rawSpec: '',
+6 silly cache add   spec: '*',
+6 silly cache add   type: 'range' }
+7 verbose addNamed node-gyp@*
+8 silly addNamed semver.valid null
+9 silly addNamed semver.validRange *
+10 silly addNameRange { name: 'node-gyp', range: '*', hasData: false }
+11 silly mapToRegistry name node-gyp
+12 silly mapToRegistry using default registry
+13 silly mapToRegistry registry https://registry.npmjs.org/
+14 silly mapToRegistry uri https://registry.npmjs.org/node-gyp
+15 verbose addNameRange registry:https://registry.npmjs.org/node-gyp not in flight; fetching
+16 verbose request uri https://registry.npmjs.org/node-gyp
+17 verbose request no auth needed
+18 info attempt registry request try #1 at 3:29:22 PM
+19 verbose request id df5d21873f0f8cf7
+20 http request GET https://registry.npmjs.org/node-gyp
+21 http 200 https://registry.npmjs.org/node-gyp
+22 silly get cb [ 200,
+22 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+22 silly get     etag: '"40GDGV3SP8I3ZNRII7JR4KK68"',
+22 silly get     'content-type': 'application/json',
+22 silly get     'cache-control': 'max-age=60',
+22 silly get     'content-length': '111007',
+22 silly get     'accept-ranges': 'bytes',
+22 silly get     date: 'Fri, 15 May 2015 19:29:22 GMT',
+22 silly get     via: '1.1 varnish',
+22 silly get     age: '55',
+22 silly get     connection: 'keep-alive',
+22 silly get     'x-served-by': 'cache-iad2141-IAD',
+22 silly get     'x-cache': 'HIT',
+22 silly get     'x-cache-hits': '2',
+22 silly get     'x-timer': 'S1431718162.874465,VS0,VE0',
+22 silly get     vary: 'Accept' } ]
+23 verbose get saving node-gyp to /home/ronnie/.npm/registry.npmjs.org/node-gyp/.cache.json
+24 silly addNameRange number 2 { name: 'node-gyp', range: '*', hasData: true }
+25 silly addNameRange versions [ 'node-gyp',
+25 silly addNameRange   [ '0.0.1',
+25 silly addNameRange     '0.0.2',
+25 silly addNameRange     '0.0.3',
+25 silly addNameRange     '0.0.4',
+25 silly addNameRange     '0.0.5',
+25 silly addNameRange     '0.0.6',
+25 silly addNameRange     '0.1.0',
+25 silly addNameRange     '0.1.1',
+25 silly addNameRange     '0.1.2',
+25 silly addNameRange     '0.1.3',
+25 silly addNameRange     '0.1.4',
+25 silly addNameRange     '0.2.0',
+25 silly addNameRange     '0.2.1',
+25 silly addNameRange     '0.2.2',
+25 silly addNameRange     '0.3.0',
+25 silly addNameRange     '0.3.1',
+25 silly addNameRange     '0.3.2',
+25 silly addNameRange     '0.3.4',
+25 silly addNameRange     '0.3.5',
+25 silly addNameRange     '0.3.6',
+25 silly addNameRange     '0.3.7',
+25 silly addNameRange     '0.3.8',
+25 silly addNameRange     '0.3.9',
+25 silly addNameRange     '0.3.10',
+25 silly addNameRange     '0.3.11',
+25 silly addNameRange     '0.4.0',
+25 silly addNameRange     '0.4.1',
+25 silly addNameRange     '0.4.2',
+25 silly addNameRange     '0.4.3',
+25 silly addNameRange     '0.4.4',
+25 silly addNameRange     '0.4.5',
+25 silly addNameRange     '0.5.0',
+25 silly addNameRange     '0.5.1',
+25 silly addNameRange     '0.5.2',
+25 silly addNameRange     '0.5.3',
+25 silly addNameRange     '0.5.4',
+25 silly addNameRange     '0.5.5',
+25 silly addNameRange     '0.5.6',
+25 silly addNameRange     '0.5.7',
+25 silly addNameRange     '0.5.8',
+25 silly addNameRange     '0.6.0',
+25 silly addNameRange     '0.6.1',
+25 silly addNameRange     '0.6.2',
+25 silly addNameRange     '0.6.3',
+25 silly addNameRange     '0.6.4',
+25 silly addNameRange     '0.6.5',
+25 silly addNameRange     '0.6.6',
+25 silly addNameRange     '0.6.7',
+25 silly addNameRange     '0.6.8',
+25 silly addNameRange     '0.6.9',
+25 silly addNameRange     '0.6.10',
+25 silly addNameRange     '0.6.11',
+25 silly addNameRange     '0.7.0',
+25 silly addNameRange     '0.7.1',
+25 silly addNameRange     '0.7.2',
+25 silly addNameRange     '0.7.3',
+25 silly addNameRange     '0.8.0',
+25 silly addNameRange     '0.8.1',
+25 silly addNameRange     '0.8.2',
+25 silly addNameRange     '0.8.3',
+25 silly addNameRange     '0.8.4',
+25 silly addNameRange     '0.8.5',
+25 silly addNameRange     '0.9.0',
+25 silly addNameRange     '0.9.1',
+25 silly addNameRange     '0.9.2',
+25 silly addNameRange     '0.9.3',
+25 silly addNameRange     '0.9.4',
+25 silly addNameRange     '0.9.5',
+25 silly addNameRange     '0.9.6',
+25 silly addNameRange     '0.10.0',
+25 silly addNameRange     '0.10.1',
+25 silly addNameRange     '0.10.2',
+25 silly addNameRange     '0.10.3',
+25 silly addNameRange     '0.10.4',
+25 silly addNameRange     '0.10.5',
+25 silly addNameRange     '0.10.6',
+25 silly addNameRange     '0.10.7',
+25 silly addNameRange     '0.10.8',
+25 silly addNameRange     '0.10.9',
+25 silly addNameRange     '0.10.10',
+25 silly addNameRange     '0.11.0',
+25 silly addNameRange     '0.12.0',
+25 silly addNameRange     '0.12.1',
+25 silly addNameRange     '0.12.2',
+25 silly addNameRange     '0.13.0',
+25 silly addNameRange     '0.13.1',
+25 silly addNameRange     '1.0.0',
+25 silly addNameRange     '1.0.1',
+25 silly addNameRange     '1.0.2',
+25 silly addNameRange     '1.0.3' ] ]
+26 verbose addNamed node-gyp@1.0.3
+27 silly addNamed semver.valid 1.0.3
+28 silly addNamed semver.validRange 1.0.3
+29 silly mapToRegistry name node-gyp
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry uri https://registry.npmjs.org/node-gyp
+33 verbose addRemoteTarball https://registry.npmjs.org/node-gyp/-/node-gyp-1.0.3.tgz not in flight; adding
+34 verbose addRemoteTarball [ 'https://registry.npmjs.org/node-gyp/-/node-gyp-1.0.3.tgz',
+34 verbose addRemoteTarball   'a2f63f2df0b1f6cc69fa54bce3cc298aa769cbd8' ]
+35 info retry fetch attempt 1 at 3:29:24 PM
+36 info attempt registry request try #1 at 3:29:24 PM
+37 http fetch GET https://registry.npmjs.org/node-gyp/-/node-gyp-1.0.3.tgz
+38 http fetch 200 https://registry.npmjs.org/node-gyp/-/node-gyp-1.0.3.tgz
+39 silly fetchAndShaCheck shasum a2f63f2df0b1f6cc69fa54bce3cc298aa769cbd8
+40 verbose addTmpTarball /tmp/npm-6778-616c0fba/registry.npmjs.org/node-gyp/-/node-gyp-1.0.3.tgz not in flight; adding
+41 verbose addTmpTarball already have metadata; skipping unpack for node-gyp@1.0.3
+42 silly cache afterAdd node-gyp@1.0.3
+43 verbose afterAdd /home/ronnie/.npm/node-gyp/1.0.3/package/package.json not in flight; writing
+44 verbose afterAdd /home/ronnie/.npm/node-gyp/1.0.3/package/package.json written
+45 silly install resolved [ { name: 'node-gyp',
+45 silly install resolved     description: 'Node.js native addon build tool',
+45 silly install resolved     keywords: [ 'native', 'addon', 'module', 'c', 'c++', 'bindings', 'gyp' ],
+45 silly install resolved     version: '1.0.3',
+45 silly install resolved     installVersion: 9,
+45 silly install resolved     author:
+45 silly install resolved      { name: 'Nathan Rajlich',
+45 silly install resolved        email: 'nathan@tootallnate.net',
+45 silly install resolved        url: 'http://tootallnate.net' },
+45 silly install resolved     repository:
+45 silly install resolved      { type: 'git',
+45 silly install resolved        url: 'git://github.com/TooTallNate/node-gyp.git' },
+45 silly install resolved     preferGlobal: true,
+45 silly install resolved     bin: { 'node-gyp': './bin/node-gyp.js' },
+45 silly install resolved     main: './lib/node-gyp.js',
+45 silly install resolved     dependencies:
+45 silly install resolved      { fstream: '^1.0.0',
+45 silly install resolved        glob: '3 || 4',
+45 silly install resolved        'graceful-fs': '3',
+45 silly install resolved        minimatch: '1',
+45 silly install resolved        mkdirp: '^0.5.0',
+45 silly install resolved        nopt: '2 || 3',
+45 silly install resolved        npmlog: '0 || 1',
+45 silly install resolved        osenv: '0',
+45 silly install resolved        request: '2',
+45 silly install resolved        rimraf: '2',
+45 silly install resolved        semver: '2.x || 3.x || 4',
+45 silly install resolved        tar: '^1.0.0',
+45 silly install resolved        which: '1' },
+45 silly install resolved     engines: { node: '>= 0.8.0' },
+45 silly install resolved     gitHead: 'abad2b58c03de713eb1805f7a681b1084c08b316',
+45 silly install resolved     bugs: { url: 'https://github.com/TooTallNate/node-gyp/issues' },
+45 silly install resolved     homepage: 'https://github.com/TooTallNate/node-gyp',
+45 silly install resolved     _id: 'node-gyp@1.0.3',
+45 silly install resolved     scripts: {},
+45 silly install resolved     _shasum: 'a2f63f2df0b1f6cc69fa54bce3cc298aa769cbd8',
+45 silly install resolved     _from: 'node-gyp@*',
+45 silly install resolved     _npmVersion: '1.4.28',
+45 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+45 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+45 silly install resolved     dist:
+45 silly install resolved      { shasum: 'a2f63f2df0b1f6cc69fa54bce3cc298aa769cbd8',
+45 silly install resolved        tarball: 'http://registry.npmjs.org/node-gyp/-/node-gyp-1.0.3.tgz' },
+45 silly install resolved     directories: {},
+45 silly install resolved     _resolved: 'https://registry.npmjs.org/node-gyp/-/node-gyp-1.0.3.tgz' } ]
+46 info install node-gyp@1.0.3 into /usr/local/lib
+47 info installOne node-gyp@1.0.3
+48 verbose installOne of node-gyp to /usr/local/lib not in flight; installing
+49 verbose lock using /home/ronnie/.npm/_locks/node-gyp-7153cdcb940d3c17.lock for /usr/local/lib/node_modules/node-gyp
+50 silly install write writing node-gyp 1.0.3 to /usr/local/lib/node_modules/node-gyp
+51 silly cache addNamed cb node-gyp@1.0.3
+52 verbose unbuild lib/node_modules/node-gyp
+53 silly gentlyRm /usr/local/lib/node_modules/node-gyp is being purged from base /usr/local
+54 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/node-gyp
+55 verbose tar unpack /home/ronnie/.npm/node-gyp/1.0.3/package.tgz
+56 verbose tar unpacking to /usr/local/lib/node_modules/node-gyp
+57 silly gentlyRm /usr/local/lib/node_modules/node-gyp is being purged
+58 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/node-gyp
+59 silly gunzTarPerm modes [ '755', '644' ]
+60 error tar.unpack untar error /home/ronnie/.npm/node-gyp/1.0.3/package.tgz
+61 verbose unlock done using /home/ronnie/.npm/_locks/node-gyp-7153cdcb940d3c17.lock for /usr/local/lib/node_modules/node-gyp
+62 verbose fstream_path /usr/local/lib/node_modules/node-gyp
+63 verbose fstream_type Directory
+64 verbose fstream_class DirWriter
+65 verbose stack Error: EACCES, mkdir '/usr/local/lib/node_modules/node-gyp'
+65 verbose stack     at Error (native)
+66 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+66 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+66 verbose fstream_stack FSReqWrap.oncomplete (fs.js:95:15)
+67 verbose cwd /home/ronnie/nodetest1
+68 error Linux 3.2.0-4-amd64
+69 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "node-gyp"
+70 error node v0.12.2
+71 error npm  v2.7.4
+72 error path /usr/local/lib/node_modules/node-gyp
+73 error code EACCES
+74 error errno -13
+75 error Error: EACCES, mkdir '/usr/local/lib/node_modules/node-gyp'
+75 error     at Error (native)
+75 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/node-gyp']
+75 error   errno: -13,
+75 error   code: 'EACCES',
+75 error   path: '/usr/local/lib/node_modules/node-gyp',
+75 error   fstream_type: 'Directory',
+75 error   fstream_path: '/usr/local/lib/node_modules/node-gyp',
+75 error   fstream_class: 'DirWriter',
+75 error   fstream_stack:
+75 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+75 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+75 error      'FSReqWrap.oncomplete (fs.js:95:15)' ] }
+76 error Please try running this command again as root/Administrator.
+77 verbose exit [ -13, true ]
+78 verbose unbuild lib/node_modules/node-gyp
+79 silly gentlyRm /usr/local/lib/node_modules/node-gyp is being purged from base /usr/local
+80 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/node-gyp

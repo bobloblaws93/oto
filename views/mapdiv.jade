@@ -98,12 +98,15 @@ html
           coordia=layer.getBounds().getCenter();
           latcoor=coordia.lat;
           lngcoor=coordia.lng;
+          radius=layer.getRadius();
           });
           function alrt(){
           alert(coordia);
+          alert(radius);
           var data = {};
           data.lat = latcoor;
           data.lng = lngcoor;
+          data.rad=radius;
           $.ajax({
           type: 'POST',
           data: JSON.stringify(data),

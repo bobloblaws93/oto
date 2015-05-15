@@ -29,7 +29,8 @@ router.post('/ajax', function (req, res){
 	console.log('body: ' + JSON.stringify(req.body));
 	 lat = req.body.lat;
 	 lng=req.body.lng;
-	console.log(lat);
+	 rad=req.body.rad;
+	 global.lat=lat;
 	console.log('AJAX CALL SUCCESS');
 
 });  
@@ -77,18 +78,20 @@ router.get('/feed', function(req, res) {
 	//res.render('feed', { title: 'User feed' });
 	var db=req.db;
 	var collection = db.get('msg');
-	
-	
+    var dis=100000;
 
+		
+               
+               
 	
 
 		var results = 	collection.find( {"messgloc":
                          { $near :
                            { $geometry :
                               { type : "Point" ,
-                                coordinates : [-73.66985,45.49624] } ,
+                                coordinates : [-73.578855,  45.495575 ] } ,
                              $maxDistance : 10000
-                      } } }
+                      } } } 
   
  
 		, function (err, doc) {
@@ -106,8 +109,8 @@ router.get('/feed', function(req, res) {
         var msg=[];
         msg.name=doc[1].msg;
         console.log(doc[0].msg);
-  res.render('feed', { title: "feed", data: msg  });
-
+		//res.render('testfeed', { title: "feed", data: msg  });
+		res.send(doc);
            //console.log(doc);
           
             
