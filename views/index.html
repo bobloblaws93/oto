@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Oto</title>
+    <script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js"></script>&#x9;
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>&#x9;
+    <link href="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet"/>
+    <link href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css" rel="stylesheet" />&#x9;
+</head>
+
+<body>
+    
+    <div id="container">
+        <ul id="menu_wrap" class="Green">
+            <li class="button"><a href="#">Home</a>
+            </li>
+            <li class="button"><a href="#">Feed</a>
+            </li>
+            <li class="button"><a href="#">Settings</a>
+            </li>
+            <li class="search">
+                <a href="#"></a>
+                <input type="text" placeholder="Search" />
+            </li>
+        </ul>&#x9;
+        <div id="map">
+            <script src="js/index.js" type="text/javascript"></script>
+        </div>
+        <form id="postmsg" action="/addmsg" name="addmsg" method="post" value="test">
+            <textarea id="msgs" rows="10" cols="50" maxlength="300" placeholder="msg" name="msg"> Type your message here</textarea>
+        </form>
+        <br/>
+        <button id="button" type="submit" name="submit" value="send" onclick="alrt();geoFindMe();textinput()">submit</button>
+        <button id="button" type="button" name="button" value="send" onclick="geoFindMe()">FIND ME</button>
+        <br/>
+        <p id="demo">TEST</p>
+    </div>
+</body>
+
+</html>
