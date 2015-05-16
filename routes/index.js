@@ -47,6 +47,10 @@ router.post('/addmsg',function(req,res){
 		var msg=req.body.msg;
 		console.log("test");
 		
+		
+		
+		
+		
 		   collection.insert({
 			"msg" : msg,
 			 "messgloc": [lng,lat]
@@ -76,47 +80,35 @@ router.get('/newuser', function(req, res) {
 
 router.get('/feed', function(req, res) {
 	//res.render('feed', { title: 'User feed' });
-	var db=req.db;
-	var collection = db.get('msg');
-    var dis=100000;
+	//var db=req.db;
+	//var collection = db.get('msg');
+    //var dis=100000;
+    mongojs = require('mongojs');
+    //var MongoClient = require('mongodb').MongoClient;
+    //var mongo = require('mongoskin');
+    //var db = require('mongoskin').db('localhost:27017');
 
+
+               var MongoClient = require("mongodb").MongoClient;
+MongoClient.connect("mongodb://localhost:27017/nodetest1", function (err, db) {
+    if (!err) {
+        db.command({
+     geoNear: "msg",
+     near: { type: "Point", coordinates: [ -73.578855,  45.495575 ] },
+     //distanceField: "dist.calculated",
+     maxDistance: 20000,
+     spherical: true,
+    
+   }, function (err, result) {
+            console.log(result.results[19].obj.msg);
+        });
+    }
+});
 		
                
-               
-	
-
-		var results = 	collection.find( {"messgloc":
-                         { $near :
-                           { $geometry :
-                              { type : "Point" ,
-                                coordinates : [-73.578855,  45.495575 ] } ,
-                             $maxDistance : 10000
-                      } } } 
-  
+		
  
-		, function (err, doc) {
-        if (err) {
-            // If it failed, return error
-            res.send("There was a problem accessing the information to the database.");
-        }
-        else {
-            // If it worked, set the header so the address bar doesn't still say /adduser
-            //res.location("feed");
-            // And forward to success page
-            
-        var jsonStr = JSON.stringify(doc);
-        var data = JSON.parse(jsonStr);
-        var msg=[];
-        msg.name=doc[1].msg;
-        console.log(doc[0].msg);
-		//res.render('testfeed', { title: "feed", data: msg  });
-		res.send(doc);
-           //console.log(doc);
-          
-            
-            //res.redirect("feed");
-        }
-    });
+	
 });
 
 /* POST to Add User Service */
