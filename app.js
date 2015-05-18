@@ -12,9 +12,10 @@ var db = monk('localhost:27017/nodetest1');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
 var app = express();
-
+global.myvar = 100;
+global.latitude = 100;
+global.longitude = 100;
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -44,13 +45,7 @@ app.use(function(req, res, next) {
     err.status = 404;
     next(err);
 });
-app.post('/ajax', function (req, res){
-
-   console.log(req);
-   console.log('req received');
-   res.redirect('/');
-
-});  
+ 
 
 /// error handlers
 
@@ -75,6 +70,43 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+
+
+app.post('/addmsg',function(req,res){
+		var db = req.db;
+		var collection=db.get('msg');
+		var msg=req.body.msg;
+		console.log("test");
+		
+		
+		
+		
+		
+		   collection.insert({
+			"msg" : msg,
+			 "messgloc": [lng,lat],
+			 "rad":rad,
+			 "group":public
+    }, function (err, doc) {
+        if (err) {
+            // If it failed, return error
+            res.send("There was a problem adding the information to the database.");
+        }
+        else {
+            // If it worked, set the header so the address bar doesn't still say /adduser
+            res.location("userlist");
+            // And forward to success page
+            res.redirect("userlist");
+        }
+    });
+		
+		
+		
+	
+	
+	
+	});
 
 
 
