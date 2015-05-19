@@ -135,12 +135,12 @@ router.get('/feed', function(req, res) {
      query:{group:"public"},
      count: "msg",
      maxDistance: 20000,
-     num:20,
+     num:100,
      spherical: true,
     //callback returns result
    }, function (err, result) {
 			console.log("NUMBER!");
-			console.log(result.dis);
+			//console.log(result.dis);
 			
 			i=0;
 			
