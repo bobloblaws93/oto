@@ -202,7 +202,7 @@ router.post('/adduser', function(req, res) {
     }, function (err, doc) {
         if (err) {
             // If it failed, return error
-            res.send("There was a problem adding the information to the database.");
+            res.send(err);
         }
         else {
             // If it worked, set the header so the address bar doesn't still say /adduser

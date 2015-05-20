@@ -29,6 +29,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('public/javascripts', express.static(path.join(__dirname, 'public/javascripts')));
+app.use('public/stylesheets', express.static(path.join(__dirname, 'public/stylesheets')));
 
 // Make our db accessible to our router
 app.use(function(req,res,next){
