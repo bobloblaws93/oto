@@ -143,7 +143,7 @@ router.get('/feed', function(req, res) {
 			//console.log(result.dis);
 			
 			i=0;
-			
+			var myarr = [];
 			for(var i=0;i<result.results.length;i++)
 			{
 				num=i;
@@ -152,6 +152,7 @@ router.get('/feed', function(req, res) {
 				console.log("within rad");
 				console.log(result.results[num].obj.msg);
 				console.log(result.results[num].dis);
+				myarr.push(result.results[num].obj.msg);
 				}
 				
 				else
@@ -167,7 +168,9 @@ router.get('/feed', function(req, res) {
 			}
 				
 				
-			
+			res.render('feed', {
+			data: myarr,
+})
 				
 				
             

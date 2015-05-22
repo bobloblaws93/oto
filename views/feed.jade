@@ -26,7 +26,6 @@ html
       float: left;
       }
   body
-   p #{data.name}
     link(href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css', rel='stylesheet')
     | &#x9;
     script(src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js')
@@ -38,6 +37,7 @@ html
       ul#menu_wrap.Green
         li.button
           a(href='/mapdiv') Home
+        | &#x9;&#x9;&#x9;
         li.button
           a(href='/feed') Feed
         li.button
@@ -49,9 +49,25 @@ html
       | &#x9;
       #map
         script(type='text/javascript').
-          var search_input= $('.search input[type=text]');var search_input_size = 120; var search_large_size = 180; var padding = 7; var shrinked = "";$(document).ready(function(){search_input.click(function(){shrink();}).focus(function(){shrink();});search_input.blur(function(){ if(shrinked=="YES")normal();});$('.button a').hover(function(){if(shrinked=="YES")normal();}); });function shrink(){if(search_input_size < search_large_size ){$('.button a').each(function(){$(this).animate({'padding-left': padding+'px','padding-right': padding+'px'},'fast');});search_input.animate({'width': search_large_size+'px'},'fast'); shrinked="YES";}return false;}function normal(){search_input.animate({'width':search_input_size+'px'},'fast'); $('.button a').animate({'padding-left':'10px','padding-right':'10px'},'fast');shrinked="";search_input.blur();return false;}
-          <p id="demo"> data.name</p>
-          </div>
-           p #{data.name}
-          </body>
-          </html>
+          var search_input= $('.search input[type=text]');
+          var search_input_size = 120; var search_large_size = 180;
+          var padding = 7; var shrinked = "";
+          $(document).ready(function(){search_input.click(function(){shrink();}).focus(function(){shrink();});
+          search_input.blur(function(){ if(shrinked=="YES")normal();});$('.button a').hover(function(){if(shrinked=="YES")normal();});
+          });
+          function shrink()
+          {
+          if(search_input_size < search_large_size ){$('.button a').each(function(){$(this).animate({'padding-left': padding+'px','padding-right': padding+'px'},'fast');});search_input.animate({'width': search_large_size+'px'},'fast'); shrinked="YES";}
+          return false;
+          }
+          function normal()
+          {
+          search_input.animate({'width':search_input_size+'px'},'fast'); $('.button a').animate({'padding-left':'10px','padding-right':'10px'},'fast');shrinked="";search_input.blur();
+          return false;
+          }
+          var data = !{JSON.stringify(data)};
+          for(var i=0;i<data.length;i++){
+          document.write("msg"+[i]+":"+data[i]);
+          document.write("<br>");
+          }
+        p#demo TEST
